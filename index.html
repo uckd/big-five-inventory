@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="日本語版 Big Five Inventory-2 (BFI-2-J) 60項目のセルフスコアリングツール">
+  <title>BFI-2-J セルフスコアリング</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="BFI-2-J セルフスコアリング ホーム">
+        <span class="brand-mark" aria-hidden="true">5</span>
+        <span>
+          <strong>BFI-2-J</strong>
+          <small>Big Five Inventory-2 日本語版</small>
+        </span>
+      </a>
+    </header>
+
+    <section id="intro" class="panel intro-panel">
+      <p class="eyebrow">60 questions · 5 domains · 15 facets</p>
+      <h1>自分のパーソナリティ傾向を<br>5つの特性から見てみる</h1>
+      <p class="lead">
+        以下の60項目について、あなたにどの程度あてはまるかを
+        1〜5の中から最も近い数字で回答してください。
+      </p>
+
+      <div class="scale-guide" aria-label="回答尺度">
+        <span><b>1</b> 全くあてはまらない</span>
+        <span><b>2</b> あてはまらない</span>
+        <span><b>3</b> どちらともいえない</span>
+        <span><b>4</b> あてはまる</span>
+        <span><b>5</b> とてもよくあてはまる</span>
+      </div>
+
+      <div class="notice">
+        <strong>回答はこのブラウザ内だけで処理されます。</strong>
+        <span>サーバーへの送信や保存は行いません。</span>
+      </div>
+
+      <button id="start-button" class="primary-button" type="button">
+        回答をはじめる
+      </button>
+
+      <p class="fine-print">
+        このツールは自己理解のための参考情報を表示するもので、医療・心理診断を行うものではありません。
+      </p>
+    </section>
+
+    <section id="quiz" class="panel quiz-panel" hidden aria-labelledby="question-text">
+      <div class="quiz-meta">
+        <span id="progress-text">1 / 60</span>
+        <span id="answered-text">回答済み 0 / 60</span>
+      </div>
+
+      <div class="progress-track" aria-hidden="true">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+
+      <form id="question-form">
+        <fieldset>
+          <legend id="question-text" tabindex="-1"></legend>
+          <div id="choices" class="choices"></div>
+        </fieldset>
+
+        <div class="quiz-actions">
+          <button id="previous-button" class="secondary-button" type="button">前へ</button>
+          <button id="next-button" class="primary-button" type="submit" disabled>次へ</button>
+        </div>
+      </form>
+    </section>
+
+    <section id="results" class="panel results-panel" hidden aria-labelledby="results-title">
+      <p class="eyebrow">Your results</p>
+      <h1 id="results-title" tabindex="-1">結果</h1>
+      <p class="lead result-lead">
+        各スコアは逆転項目を処理したあとの平均値で、範囲は1〜5です。
+        高い・低いこと自体に良し悪しはありません。
+      </p>
+
+      <div id="domain-results" class="domain-results"></div>
+
+      <div class="result-actions">
+        <button id="restart-button" class="secondary-button" type="button">もう一度回答する</button>
+        <button id="print-button" class="primary-button" type="button">結果を印刷する</button>
+      </div>
+
+      <details class="method-note">
+        <summary>得点の計算方法</summary>
+        <p>
+          逆転項目は <code>6 − 回答値</code> で変換し、
+          5つのドメインは各12項目、15のファセットは各4項目の平均を表示しています。
+        </p>
+      </details>
+
+      <div class="sources">
+        <h2>出典</h2>
+        <p>
+          質問項目と尺度構成は日本語版 Big Five Inventory-2 (BFI-2-J) に基づいています。
+        </p>
+        <ul>
+          <li>
+            <a href="https://oshio.w.waseda.jp/archives/623" target="_blank" rel="noreferrer">
+              早稲田大学 パーソナリティ心理学研究室：日本語版 Big Five Inventory-2（BFI-2-J）
+            </a>
+          </li>
+          <li>
+            <a href="https://doi.org/10.3389/fpsyg.2022.924351" target="_blank" rel="noreferrer">
+              Yoshino et al. (2022), Frontiers in Psychology
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
