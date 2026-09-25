@@ -2,6 +2,12 @@
 
 日本語版 Big Five Inventory-2（BFI-2-J）の60項目に回答し、5ドメインと15ファセットの得点をブラウザ内で計算・表示する静的Webツールです。
 
+## ブラウザで試す
+
+[BFI-2-Jのサンプルページを開く](https://uckd.github.io/big-five-inventory/)
+
+公開には、このリポジトリの **Settings → Pages → Build and deployment** で **Deploy from a branch** を選び、公開元を **main / (root)** に設定してください。
+
 ## 特徴
 
 - 1〜5の5件法で60項目に回答
